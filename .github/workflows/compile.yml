@@ -16,8 +16,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           skip_package_manager_install: false
-          package_manager: yarn
-          release: false
+          package_manager: npm
+          release: true
           package_root: .
           build_script_name: build
           skip_build: false
