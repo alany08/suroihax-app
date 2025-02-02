@@ -1,31 +1,25 @@
-name: Build/release
+name: Electron App Build
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  release:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
-      - name: Install Node.js, NPM and Yarn
-        uses: actions/setup-node@v1
+      - name: Electron Builder
+        uses: paneron/action-electron-builder@v1.8.1
         with:
-          node-version: 10
-
-      - name: Build/release Electron app
-        uses: samuelmeuli/action-electron-builder@v1
-        with:
-          # GitHub token, automatically provided to the action
-          # (No need to define this secret in the repo settings)
-          github_token: ${{ secrets.github_token }}
-
-          # If the commit is tagged with a version (e.g. "v1.0.0"),
-          # release the app after building
-          release: ${{ startsWith(github.ref, 'refs/tags/v') }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          skip_package_manager_install: false
+          package_manager: yarn
+          release: false
+          package_root: .
+          build_script_name: build
+          skip_build: false
+          use_vue_cli: false
+          max_attempts: 1
