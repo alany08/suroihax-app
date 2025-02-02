@@ -14,14 +14,8 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v1
 
-      - name: bash
-        script: |
-          npm install --force
-      
-      - name: Install Node.js, NPM and Yarn
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
+      - name: Install packages
+        uses: actions/setup-node@v4
 
       - name: Build/release Electron app
         uses: paneron/action-electron-builder@v1.8.1
