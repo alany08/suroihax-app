@@ -20,7 +20,7 @@
     "electron": "^34.0.2",
     "electron-builder": "^25.1.8"
   },
-  "dependencies": {
-    "electron-prompt": "^1.7.0"
+  "dependencies":{
+    "electron-builder": "^25.1.8"
   }
 }
