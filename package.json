@@ -1,20 +1,17 @@
 {
-  "name": "electron-quick-start",
+  "name": "SuroiHax App",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Minimal app for https://suroihax.glitch.me",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/alany08/suroihax-app",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "suroi",
+    "electron"
   ],
-  "author": "GitHub",
+  "author": "alany08",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^34.0.2",
