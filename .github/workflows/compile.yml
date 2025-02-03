@@ -34,9 +34,8 @@ jobs:
           # args: "--publish never"
 
       # upload artifacts as release
-      - uses: kittaakos/upload-artifact-as-is@v1
+      - uses: actions/upload-artifact@v4
         with:
-          path: "dist/*"
-          # the different action (not github built-in should upload files as-is)
-          # retention-days: 90
-          # name: ${{ github.event.repository.name }}-${{ matrix.os }}.zip
+          path: "dist/suroihax-app*"
+          retention-days: 90
+          name: ${{ github.event.repository.name }}-${{ matrix.os }}
