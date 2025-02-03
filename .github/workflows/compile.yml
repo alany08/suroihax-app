@@ -19,7 +19,7 @@ jobs:
         with:
           node_version: latest
       - run: npm i
-
+    
       - name: Build/release Electron app
         uses: paneron/action-electron-builder@v1.8.1
         with:
@@ -30,3 +30,4 @@ jobs:
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
           release: true
+          args: "--publish never"
