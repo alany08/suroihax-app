@@ -36,6 +36,9 @@ jobs:
       # upload artifacts as release
       - uses: actions/upload-artifact@v4
         with:
-          path: "dist/suroihax-app*"
+          path: |
+            dist/suroihax-app*.AppImage
+            dist/suroihax-app*.exe
+            dist/suroihax-app*.dmg
           retention-days: 90
           name: ${{ github.event.repository.name }}-${{ matrix.os }}
