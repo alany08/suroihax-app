@@ -16,6 +16,9 @@ jobs:
 
       - name: Install packages
         uses: actions/setup-node@v4
+        with:
+          node_version: latest
+      - run: npm i
 
       - name: Build/release Electron app
         uses: paneron/action-electron-builder@v1.8.1
