@@ -32,3 +32,9 @@ jobs:
           release: false
           # does setting this to false not publish it to snap store and stuff
           # args: "--publish never"
+
+      # upload artifacts as release
+      - uses: actions/upload-artifact@v4
+        with:
+          path: "dist/*"
+          retention-days: 90
