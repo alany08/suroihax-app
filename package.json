@@ -14,7 +14,7 @@
   "author": "alany08",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^34.0.2",
+    "electron": "^34.1.0",
     "electron-builder": "^25.1.8"
   }
 }
